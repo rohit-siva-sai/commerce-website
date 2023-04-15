@@ -225,7 +225,7 @@ export default function Home({ addToCart, buyNow }) {
       )}
 
       <div className="flex">
-        <div className=" sticky left-0 md:top-16 top-32 overflow-y-scroll overscroll-contain md:h-[90vh] h-fit md:border-none border bg-transparent      shadow-inner md:px-4 px-1 py-4 max-h-max ">
+        <div className=" sticky left-0 md:top-16 top-32 overflow-y-scroll overscroll-contain md:h-[90vh] h-fit md:border-none border bg-transparent      shadow-inner md:px-4 px-1 pt-4 pb-10 max-h-max ">
           <div>
             <div className="md:block hidden ">
               <input
@@ -493,7 +493,7 @@ export default function Home({ addToCart, buyNow }) {
                 htmlFor=""
                 className="md:text-base flex items-center text-xs tracking-normal  font-medium"
               >
-                <div className="bg-lime-400  p-1 flex   font-semibold items-center w-fit rounded-lg">
+                <div className="bg-lime-400  px-1 flex   font-semibold items-center w-fit rounded-lg">
                   <p> 3 </p>
                   <AiFillStar className="md:w-3 w-2  " />
                 </div>
@@ -518,7 +518,7 @@ export default function Home({ addToCart, buyNow }) {
                 htmlFor=""
                 className="md:text-base flex items-center text-xs tracking-normal  font-medium"
               >
-                <div className="bg-lime-400  p-1 flex  font-semibold items-center w-fit rounded-lg">
+                <div className="bg-lime-400  px-1 flex  font-semibold items-center w-fit rounded-lg">
                   <p> 4 </p>
                   <AiFillStar className="md:w-3  w-2  " />
                 </div>
@@ -663,6 +663,11 @@ export default function Home({ addToCart, buyNow }) {
             })}
           </main>
         )}
+      </div>
+
+      <div className="sticky w-fit bottom-1 rounded-lg text-[10px] right-1  p-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 text-white select-none font-bold hover:to-yellow-500" >
+           <span>designed by : </span>
+           <span>Reddy Rohit</span>
       </div>
       
     </div>

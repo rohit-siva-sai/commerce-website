@@ -80,7 +80,7 @@ const Display = ({
           <div
             className="mt-4 flex flex-col space-y-3 justify-center "
             data-aos="zoom-in"
-            data-aos-duration="1500"
+            data-aos-duration="1000"
           >
             <div className="flex justify-center space-x-4 items-center">
               <div
