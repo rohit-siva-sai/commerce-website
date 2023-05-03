@@ -28,7 +28,7 @@ const generateEmailContent = (data) => {
 
 const handler = async (req,res) => {
   // console.log(req.body);
-  if (req.method == "POST") {
+  if (req.method === "POST") {
     const data = req.body;
     if (!data.name || !data.subject || !data.email || !data.message) {
       return res.status(400).json({ message: "bad request" });
