@@ -49,6 +49,9 @@ const Navbar = ({
               </p>
             </div>
           </Link>
+          <Link href={"/emailSender"}>
+            emailsender
+          </Link>
           {/* <Link href={"/"}>
             <div className="hover:text-gray-500 font-bold text-lg ">Home</div>
           </Link>

@@ -90,12 +90,10 @@ export default function Home({ addToCart, buyNow }) {
     console.log(filterLoad, "loDISDHBD");
 
     if (loyal) {
-     
       pro2 = pro2.filter((curElement) => {
         const price = parseInt(curElement.discountPrice.replace(/,/g, ""));
         return price < Number(value) && price > value2;
       });
-      
 
       console.log(loyal, "roehierbjrejvr");
 
@@ -106,7 +104,6 @@ export default function Home({ addToCart, buyNow }) {
       console.log(pro2, "after");
       return;
     } else {
-      
       setTimeout((e) => {
         setFilterLoad(false);
         setProducts(items);
@@ -188,7 +185,6 @@ export default function Home({ addToCart, buyNow }) {
 
   return (
     <div className="">
-     
       <div className="w-full sticky top-20 z-10 md:hidden block px-4 my-2 ">
         <input
           type="search"
@@ -665,11 +661,10 @@ export default function Home({ addToCart, buyNow }) {
         )}
       </div>
 
-      <div className="sticky w-fit bottom-1 rounded-lg text-[10px] right-1  p-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 text-white select-none font-bold hover:to-yellow-500" >
-           <span>designed by : </span>
-           <span>Reddy Rohit</span>
+      <div className="sticky w-fit bottom-1 rounded-lg text-[10px] right-1  p-1 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 text-white select-none font-bold hover:to-yellow-500">
+        <span>designed by : </span>
+        <span>Reddy Rohit</span>
       </div>
-      
     </div>
   );
 }
