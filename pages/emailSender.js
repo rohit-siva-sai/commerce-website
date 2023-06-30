@@ -1,12 +1,13 @@
 import { sendContactForm } from "@/lib/api";
 import React, { useState } from "react";
 
-const initValues = { name: "", email: "", subject: "", message: "" }
+const initValues = { name: "", email: "", subject: "",phone: "", message: "" }
 
-const initstate = {isLoading: false, error: "", values: initValues }
+const initstate = {isLoading: false, error: "",mainEmail: "rohitsivasai989@gmail.com", values: initValues }
 
 const EmailSender = () => {
   const [state, setState] = useState(initstate);
+  const [mainEmail,setMainEmail] = useState("rohitsivasai989@gmail.com")
 
   const { values,isLoading,error } = state;
 
@@ -25,7 +26,7 @@ const EmailSender = () => {
             isLoading: true,
         }))
         try {
-        await sendContactForm(values)
+        await sendContactForm(state)
         setState(initstate)
 
         } catch (error) {
@@ -76,6 +77,17 @@ const EmailSender = () => {
               name="subject"
               id=""
               value={values.subject}
+              onChange={handleChange}
+              className="border-2"
+            />
+          </div>
+          <div className="flex flex-col w-1/5 mx-auto">
+            <label htmlFor="">phone number</label>
+            <input
+              type="number"
+              name="phone"
+              id=""
+              value={values.phone}
               onChange={handleChange}
               className="border-2"
             />

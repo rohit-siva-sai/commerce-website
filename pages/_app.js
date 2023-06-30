@@ -13,7 +13,6 @@ export default function App({ Component, pageProps }) {
   const [key, setKey] = useState(0);
   const [progress, setProgress] = useState(0);
   const router = useRouter();
-  
 
   useEffect(() => {
     try {
@@ -65,8 +64,6 @@ export default function App({ Component, pageProps }) {
       progress: undefined,
       theme: "dark",
     });
-  
-    
   };
 
   const removeFromCart = (itemcode, qty, title, price) => {
@@ -112,16 +109,29 @@ export default function App({ Component, pageProps }) {
     });
     router.push("/checkout");
   };
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
- 
+    gtag("config", "G-CKGGXCJ4DY");
+  });
 
   return (
     <>
-    <Head>
+      <Head>
         <title>CrazyShop </title>
-          <link rel="icon" href="/icon1.png" />
+        <link rel="icon" href="/icon1.png" />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-CKGGXCJ4DY"
+        ></script>
+       
       </Head>
-     <ToastContainer
+      <ToastContainer
         position="top-center"
         autoClose={1500}
         hideProgressBar={false}
@@ -140,7 +150,6 @@ export default function App({ Component, pageProps }) {
         removeFromCart={removeFromCart}
         clearCart={clearCart}
         subTotal={subTotal}
-       
       />
       <Component
         cartOnly={cartOnly}
@@ -148,7 +157,6 @@ export default function App({ Component, pageProps }) {
         addToCart={addToCart}
         buyNow={buyNow}
         removeFromCart={removeFromCart}
-        
         {...pageProps}
       />
     </>

@@ -27,20 +27,20 @@ const generateEmailContent = (data) => {
 };
 
 const handler = async (req,res) => {
-  // console.log(req.body);
+  console.log(req.body);
   if (req.method === "POST") {
-    const data = req.body;
+    const mainEmail = req.body.mainEmail
+    const data = req.body.values;
     if (!data.name || !data.subject || !data.email || !data.message) {
       return res.status(400).json({ message: "bad request" });
     }
     try {
       await transporter.sendMail({
-        from: "rohitsivasai989@gmail.com",
-        to: "rohitsivasaireddy@gmail.com",
+        from: data.email,
+        to: mainEmail,
         ...generateEmailContent(data),
         subject: data.subject,
-        
-      });
+      })
       return res.status(200).json({ success: true });
     } catch (error) {
       console.log(error);
